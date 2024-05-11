@@ -10,7 +10,6 @@ GENDER_CHOICES = (
 class Teacher(models.Model):
     teacher_ID = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
@@ -20,6 +19,6 @@ class Teacher(models.Model):
     date_of_join = models.DateField()
 
     def __str__(self):
-        return self.name
+        return self.user.first_name
 
 
