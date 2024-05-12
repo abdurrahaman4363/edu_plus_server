@@ -20,6 +20,6 @@ class Teacher(models.Model):
     date_of_join = models.DateField()
 
     def __str__(self):
-        return self.user.first_name
+        return self.user.username
 
 
