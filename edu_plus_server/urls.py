@@ -12,4 +12,5 @@ urlpatterns = [
     path("courses/",include("Course.urls")),
     path("student/",include("students.urls")),
     path("classes/",include("classes.urls")),
+    path("attendences/",include("attendences.urls")),
 ]
