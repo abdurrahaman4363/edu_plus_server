@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     "teachers",
     "Assignment",
     "Course",
-    "students"
+    "students",
+    "grade",
+    "analytics",
+    "parents",
 ]
 
 MIDDLEWARE = [
