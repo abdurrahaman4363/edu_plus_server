@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-dc7*ak9wd^3#4(9j#37zm0l=-!o56wh4-nx3@=7=18nfpq(7q)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,14 +38,18 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'rest_framework.authtoken',
+    "rest_framework.authtoken",
     'django_filters',
+    "corsheaders",
     "employee",
     "teachers",
-    'Students',
+    "Assignment",
+    "Course",
+    "students"
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -56,6 +60,28 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "edu_plus_server.urls"
+
+# When we Host it then we have to Delete this part 
+
+
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:5500',
+    # Add other allowed origins as needed
+]
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS'
+]
+
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+    'Authorization',
+]
+CORS_ALLOW_CREDENTIALS = True 
+#---------------------------------------
 
 TEMPLATES = [
     {
