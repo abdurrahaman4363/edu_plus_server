@@ -16,6 +16,7 @@ class Teacher(models.Model):
     department = models.CharField(max_length=100)
     gender = models.CharField(max_length=8, choices= GENDER_CHOICES)
     address = models.TextField()
+    image = models.ImageField(upload_to="teachers/image/",blank=True)
     date_of_join = models.DateField()
 
     def __str__(self):
