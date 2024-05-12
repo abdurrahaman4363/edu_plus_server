@@ -70,24 +70,6 @@ ROOT_URLCONF = "edu_plus_server.urls"
 # When we Host it then we have to Delete this part 
 CSRF_TRUSTED_ORIGINS = ['https://edu-plus-server.onrender.com','https://*.127.0.0.1']
 
-CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5500',
-    'https://edu-plus-server.onrender.com'
-    # Add other allowed origins as needed
-]
-CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
-    'PUT',
-    'DELETE',
-    'OPTIONS'
-]
-
-CORS_ALLOW_HEADERS = [
-    'Content-Type',
-    'Authorization',
-]
-CORS_ALLOW_CREDENTIALS = True 
 #---------------------------------------
 
 TEMPLATES = [
