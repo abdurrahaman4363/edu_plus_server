@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     'django_filters',
+    "corsheaders",
     "accounts",
     "employee",
     "teachers",
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -68,6 +70,33 @@ ROOT_URLCONF = "edu_plus_server.urls"
 # When we Host it then we have to Delete this part 
 CSRF_TRUSTED_ORIGINS = ['https://edu-plus-server.onrender.com','https://*.127.0.0.1']
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+   'http://127.0.0.1:5500',
+    'http://127.0.0.1:5173',
+    'https://edu-plus-server.onrender.com'
+)
+
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:5500',
+    'http://127.0.0.1:5173',
+    'https://edu-plus-server.onrender.com'
+    # Add other allowed origins as needed
+]
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS'
+]
+
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+    'Authorization',
+]
+CORS_ALLOW_CREDENTIALS = True 
 #---------------------------------------
 
 TEMPLATES = [
