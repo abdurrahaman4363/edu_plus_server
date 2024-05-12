@@ -41,11 +41,15 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     'django_filters',
     "corsheaders",
+    "accounts",
     "employee",
     "teachers",
     "Assignment",
     "Course",
-    "students"
+    "students",
+    "classes",
+    "attendences",
+    
 ]
 
 MIDDLEWARE = [
