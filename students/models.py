@@ -1,4 +1,5 @@
 from django.db import models
+from classes.models import *
 
 # Create your models here.
 GENDER_OPTION = [
@@ -9,6 +10,7 @@ GENDER_OPTION = [
 
 
 class Student(models.Model):
+    classes =models.ForeignKey(Classes, verbose_name="Classes", on_delete=models.CASCADE, default=1)
     student_id = models.IntegerField(primary_key=True)
     first_name = models.CharField(max_length=500)
     last_name = models.CharField(max_length=500)
@@ -22,3 +24,6 @@ class Student(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
+# dd

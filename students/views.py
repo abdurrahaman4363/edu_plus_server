@@ -11,3 +11,4 @@ class StudentListCreateAPIView(generics.ListCreateAPIView):
 class StudentRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+# dd 
