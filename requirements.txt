@@ -5,3 +5,17 @@ djangorestframework
 Markdown
 pillow
 sqlparse
+django-allauth
+django-autoslug
+django-cloudinary-storage
+django-countries
+django-crispy-forms
+django-debug-toolbar
+django-environ
+django-extensions
+django-filter
+django-jazzmin
+django-markwhat
+django-redis
+django-storages
+
