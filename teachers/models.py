@@ -10,6 +10,7 @@ GENDER_CHOICES = (
 class Teacher(models.Model):
     teacher_ID = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete = models.CASCADE)
+    teacher_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)

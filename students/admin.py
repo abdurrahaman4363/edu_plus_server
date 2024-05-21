@@ -4,7 +4,7 @@ from . models import Student
 
 
 class StudentModelAdmin(admin.ModelAdmin):
-    list_display = ['student_id', 'first_name', 'email',
+    list_display = ['first_name', 'email',
                     'gender', 'address', 'phone', 'date_of_join', 'parent_name']
 
 

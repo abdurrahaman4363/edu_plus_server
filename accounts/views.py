@@ -3,6 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth import authenticate, login
 from .serializers import UserRegistrationSerializer, UserLoginSerializer
+from rest_framework import viewsets
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
+
 
 class UserRegistrationView(APIView):
     def post(self, request):
@@ -25,3 +29,8 @@ class UserLoginView(APIView):
             else:
                 return Response({'message': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class Userlist(viewsets.ReadOnlyModelViewSet):
+   queryset = User.objects.all()
+   serializer_class = UserSerializer
